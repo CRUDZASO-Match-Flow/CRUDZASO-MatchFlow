@@ -48,7 +48,7 @@ form.addEventListener("submit", async (e) => {
         if (user.userType === "company") {
         window.location.href = "/pages/company/dashboard.html";
         } else {
-        window.location.href = "/pages/candidate/dashboard.html";
+        window.location.href = "/pages/user/candidate-dashboard.html";
         }
 
     } catch (err) {

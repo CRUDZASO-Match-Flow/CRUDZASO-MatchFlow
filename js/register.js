@@ -37,7 +37,7 @@ form.addEventListener("submit", async (e) => {
 
     try {
         await registerUser(role, name, email, password, confirm);
-        window.location.href = "login.html";
+        window.location.href = "../../index.html";
     } catch (err) {
         errorMsg.textContent = err.message;
     }
