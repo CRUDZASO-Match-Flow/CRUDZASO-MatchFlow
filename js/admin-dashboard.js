@@ -1,16 +1,14 @@
 const currentSession = JSON.parse(localStorage.getItem("session"));
 
-const companyId = 1 // esto es para que funciones de momento, ya que no sé como esté trabajando el login, ya cuando funcione se puede usar la logica que está comentada
+const companyId = currentSession.id
 
-// const companyId = currentSession.id
+if (!currentSession) {
+    window.location.href = "../../index.html";
+}
 
-// if (!currentSession) {
-//     window.location.href = "../../index.html";
-// }
-
-// if (currentSession.role === "user") {
-//     window.location.href = "../user/candidate-dashboard.html"
-// }
+if (currentSession.role === "user") {
+    window.location.href = "../user/candidate-dashboard.html"
+}
 
 const logoutBtn = document.getElementById("logout-btn")
 const createJobOfferBtn = document.getElementById("create-job-offer")

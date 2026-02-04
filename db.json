@@ -1,14 +1,18 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "role": "company",
       "name": "Crudzaso Tech",
       "email": "company@gmail.com",
-      "password": "123456"
+      "password": "123456",
+      "industry": "Technology",
+      "location": "Medellín, Colombia",
+      "size": "51-200",
+      "description": "We build fast hiring experiences"
     },
     {
-      "id": 2,
+      "id": "2",
       "role": "candidate",
       "name": "Ana Gómez",
       "email": "candidate@gmail.com",
@@ -17,17 +21,17 @@
   ],
   "companies": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "industry": "Technology",
-      "size": "51-200",
+      "size": "12",
       "location": "Medellín, Colombia",
-      "description": "We build fast hiring experiences"
+      "description": "We build fast hiring experience"
     }
   ],
   "candidates": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 2,
       "title": "Frontend Developer",
       "skills": [
@@ -42,7 +46,7 @@
   ],
   "jobOffers": [
     {
-      "id": 1,
+      "id": "1",
       "companyId": 1,
       "title": "Frontend Developer",
       "description": "React developer with experience in SPAs",
@@ -54,7 +58,7 @@
   ],
   "matches": [
     {
-      "id": 1,
+      "id": "1",
       "companyId": 1,
       "jobOfferId": 1,
       "candidateId": 1,
@@ -63,7 +67,7 @@
       "contactUnlocked": false
     },
     {
-      "id": 2,
+      "id": "2",
       "companyId": 1,
       "jobOfferId": 1,
       "candidateId": 1,
@@ -74,7 +78,7 @@
   ],
   "reservations": [
     {
-      "id": 1,
+      "id": "1",
       "candidateId": 1,
       "companyId": 1,
       "jobOfferId": 1,
