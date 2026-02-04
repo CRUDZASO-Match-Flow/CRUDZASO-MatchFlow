@@ -23,7 +23,7 @@ The system follows a **users + role profiles** architecture:
 - Ulith  
 - Faiber Camacho  
 - Stteen  
-- Andres  
+- Andres  Guerra
 
 ---
 
