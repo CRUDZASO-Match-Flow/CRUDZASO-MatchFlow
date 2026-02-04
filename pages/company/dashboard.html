@@ -35,7 +35,7 @@
                 <a class="p-2 rounded hover:bg-sky/10 hover:text-sky" href="search-candidate.html">Find candidates</a>
                 <a class="p-2 rounded hover:bg-sky/10 hover:text-sky" href="company-job-offers.html">Job Offers</a>
             </nav>
-            <button
+            <button id="logout-btn"
                 class="px-4 py-2 text-sm shadow-sm text-deep border font-bold rounded hover:bg-ink hover:text-white transition-colors duration-200">Logout</button>
         </div>
     </header>
@@ -44,7 +44,7 @@
 
         <section class="flex justify-between items-center">
             <h1 class="text-2xl text-deep font-semibold">Company Dashboard</h1>
-            <button class="bg-sky text-white px-4 py-2 rounded-lg text-lg font-medium">
+            <button id="create-job-offer" class="bg-sky text-white px-4 py-2 rounded-lg text-lg font-medium">
                 + Create Job Offer
             </button>
         </section>
@@ -76,30 +76,11 @@
                 <h2 class="font-semibold text-lg text-deep">Recent Matches</h2>
             </div>
 
-            <div class="divide-y">
-                <div class="p-6 flex justify-between items-center">
-                    <div>
-                        <p class="font-medium text-deep">Any</p>
-                        <p class="text-sm text-deep">Candidate - Pending</p>
-                    </div>
-                    <span class="text-xs text-deep bg-gray-100 px-3 py-1 rounded-full">
-                        Pending
-                    </span>
-                </div>
-
-                <div class="p-6 flex justify-between items-center">
-                    <div>
-                        <p class="font-medium text-deep">: p</p>
-                        <p class="text-sm text-deep">Candidate - Contacted</p>
-                    </div>
-                    <span class="text-xs bg-sky/10 text-sky px-3 py-1 rounded-full">
-                        Contacted
-                    </span>
-                </div>
+            <div id="recent-matches" class="divide-y">
             </div>
         </section>
     </main>
-    <script type="module" src="../../js/dashboard.js"></script>
+    <script type="module" src="../../js/admin-dashboard.js"></script>
 </body>
 
 </html>

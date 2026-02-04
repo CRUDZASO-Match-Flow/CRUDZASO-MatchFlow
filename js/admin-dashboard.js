@@ -1,26 +1,26 @@
-// function getCurrentCompanyId() {
-//     const session = JSON.parse(sessionStorage.getItem("companySession"));
-//     if (!session) {
-//         window.location.href = "index.html"
-//     };
+const currentSession = JSON.parse(localStorage.getItem("session"));
 
-//     return fetch("http://localhost:3000/companies")
-//         .then(res => res.json())
-//         .then(companies => {
-//             let id = 0;
+const companyId = currentSession.userId
 
-//             companies.forEach(company => {
-//                 if (company.name === session.name) {
-//                     id = company.id;
-//                 }
-//             });
+if (!currentSession) {
+    window.location.href = "../../index.html";
+}
 
-//             return id;
-//         });
-// }
-// const currentCompanyId =  getCurrentCompanyId()
+if (currentSession.role === "user") {
+    window.location.href = "../user/candidate-dashboard.html"
+}
 
-const currentCompanyId = 1;
+const logoutBtn = document.getElementById("logout-btn")
+const createJobOfferBtn = document.getElementById("create-job-offer")
+
+logoutBtn.addEventListener("click", () => {
+    clearSession()
+    window.location.href = "../../index.html"
+})
+
+createJobOfferBtn.addEventListener("click", () => {
+    window.location.href = "company-job-offers.html"
+})
 
 document.addEventListener("DOMContentLoaded", () => {
     loadOffers();
@@ -37,7 +37,7 @@ function loadOffers() {
             let count = 0;
 
             jobOffers.forEach(offer => {
-                if (offer.companyId === currentCompanyId && offer.status === "open") {
+                if (offer.companyId === companyId && offer.status === "open") {
                     count++;
                 }
             });
@@ -53,7 +53,7 @@ function loadMatches() {
             let count = 0;
 
             matches.forEach(match => {
-                if (match.companyId === currentCompanyId) {
+                if (match.companyId === companyId) {
                     count++;
                 }
             });
@@ -70,7 +70,7 @@ function loadReservations() {
 
             reservations.forEach(reservation => {
                 if (
-                    reservation.companyId === currentCompanyId &&
+                    reservation.companyId === companyId &&
                     reservation.active === true
                 ) {
                     count++;
@@ -89,7 +89,7 @@ function loadHired() {
 
             matches.forEach(match => {
                 if (
-                    match.companyId === currentCompanyId &&
+                    match.companyId === companyId &&
                     match.status === "hired"
                 ) {
                     count++;
@@ -105,8 +105,8 @@ function loadRecentMatches() {
     fetch(`http://localhost:3000/matches`)
         .then(response => response.json())
         .then(matches => {
-            const container = document.querySelector(".divide-y");
-            container.innerHTML = "";
+            const card = document.querySelector("#recent-matches");
+            card.innerHTML = "";
 
             matches.forEach(match => {
                 const div = document.createElement("div");
@@ -114,15 +114,21 @@ function loadRecentMatches() {
 
                 div.innerHTML = `
                     <div>
-                        <p class="font-medium text-deep">Candidate #${match.candidateId}</p>
-                        <p class="text-sm text-deep">Status: ${match.status}</p>
+                        <p class="font-medium text-deep">Candidate ${match.candidateId}</p>
+                        <p class="text-sm text-deep">${match.createdAt}</p>
                     </div>
                     <span class="text-xs bg-gray-100 px-3 py-1 rounded-full">
                         ${match.status}
                     </span>
                 `;
 
-                container.appendChild(div);
+                card.appendChild(div);
             });
         });
 }
+
+function clearSession() {
+    localStorage.removeItem("session");
+}
+
+
