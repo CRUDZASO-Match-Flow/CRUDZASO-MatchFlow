@@ -1,26 +1,28 @@
-// function getCurrentCompanyId() {
-//     const session = JSON.parse(sessionStorage.getItem("companySession"));
-//     if (!session) {
-//         window.location.href = "index.html"
-//     };
+const currentSession = JSON.parse(localStorage.getItem("session"));
 
-//     return fetch("http://localhost:3000/companies")
-//         .then(res => res.json())
-//         .then(companies => {
-//             let id = 0;
+const companyId = 1 // esto es para que funciones de momento, ya que no sé como esté trabajando el login, ya cuando funcione se puede usar la logica que está comentada
 
-//             companies.forEach(company => {
-//                 if (company.name === session.name) {
-//                     id = company.id;
-//                 }
-//             });
+// const companyId = currentSession.id
 
-//             return id;
-//         });
+// if (!currentSession) {
+//     window.location.href = "../../index.html";
 // }
-// const currentCompanyId =  getCurrentCompanyId()
 
-const currentCompanyId = 1;
+// if (currentSession.role === "user") {
+//     window.location.href = "../user/candidate-dashboard.html"
+// }
+
+const logoutBtn = document.getElementById("logout-btn")
+const createJobOfferBtn = document.getElementById("create-job-offer")
+
+logoutBtn.addEventListener("click", () => {
+    clearSession()
+    window.location.href = "../../index.html"
+})
+
+createJobOfferBtn.addEventListener("click", () => {
+    window.location.href = "company-job-offers.html"
+})
 
 document.addEventListener("DOMContentLoaded", () => {
     loadOffers();
@@ -37,7 +39,7 @@ function loadOffers() {
             let count = 0;
 
             jobOffers.forEach(offer => {
-                if (offer.companyId === currentCompanyId && offer.status === "open") {
+                if (offer.companyId === companyId && offer.status === "open") {
                     count++;
                 }
             });
@@ -53,7 +55,7 @@ function loadMatches() {
             let count = 0;
 
             matches.forEach(match => {
-                if (match.companyId === currentCompanyId) {
+                if (match.companyId === companyId) {
                     count++;
                 }
             });
@@ -70,7 +72,7 @@ function loadReservations() {
 
             reservations.forEach(reservation => {
                 if (
-                    reservation.companyId === currentCompanyId &&
+                    reservation.companyId === companyId &&
                     reservation.active === true
                 ) {
                     count++;
@@ -89,7 +91,7 @@ function loadHired() {
 
             matches.forEach(match => {
                 if (
-                    match.companyId === currentCompanyId &&
+                    match.companyId === companyId &&
                     match.status === "hired"
                 ) {
                     count++;
@@ -126,3 +128,9 @@ function loadRecentMatches() {
             });
         });
 }
+
+function clearSession() {
+    localStorage.removeItem("session");
+}
+
+
