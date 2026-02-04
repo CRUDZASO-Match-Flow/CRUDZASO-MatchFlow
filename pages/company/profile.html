@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>MatchFlow - Company Profile</title>
+</head>
+
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    ink: '#00171f',
+                    deep: '#003459',
+                    cerulean: '#007ea7',
+                    sky: '#00a8e8'
+                }
+            }
+        }
+    }
+</script>
+
+<body class="bg-gray-100 text-ink min-h-screen">
+    <header class="bg-white text-white shadow-sm">
+        <div class="max-w-7xl mx-auto p-5 flex justify-between gap-1 items-center ">
+            <a class="p-2 font-semibold text-xl text-deep text-center min-sm:w-full" href="#">MatchFlow</a>
+            <nav class="flex gap-4 sm:gap-12 text-sm items-center text-deep">
+                <a class="p-2 border-b-2 border-sky rounded hover:bg-sky/10 hover:text-sky font-medium"
+                    href="profile.html">Company Profile</a>
+                <a class="p-2 rounded hover:bg-sky/10 hover:text-sky" href="dashboard.html">Dashboard</a>
+                <a class="p-2 rounded hover:bg-sky/10 hover:text-sky" href="search-candidate.html">Find candidates</a>
+                <a class="p-2 rounded hover:bg-sky/10 hover:text-sky" href="company-job-offers.html">Job Offers</a>
+            </nav>
+            <button id="logout-btn"
+                class="px-4 py-2 text-sm shadow-sm text-deep border font-bold rounded hover:bg-ink hover:text-white transition-colors duration-200">
+                Logout
+            </button>
+        </div>
+    </header>
+
+    <div class="h-40 bg-deep"></div>
+
+    <main class="max-w-7xl mx-auto px-6 -mt-16 space-y-6">
+
+        <section class="bg-white rounded-lg shadow-sm p-6 flex gap-6">
+            <input
+                class="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center text-sm font-semibold text-gray-500"
+                placeholder="         LOGO">
+            </input>
+
+            <div class="flex-1">
+                <h1 id="company-name" class="text-xl font-semibold text-deep">Crudzaso</h1>
+                <p id="company-industry" class="text-sm text-gray-600"></p>
+
+                <div class="flex gap-4 mt-2 text-xs text-gray-500">
+                    <span id="company-place"></span>
+                    <span id="company-employees"></span>
+                </div>
+
+                <div class="mt-4 flex gap-3">
+                    <button id="edit-btn" class="bg-sky text-white px-4 py-2 rounded text-sm font-medium">
+                        Edit Profile
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-sm font-semibold text-deep mb-2">About</h2>
+            <p id="company-description" class="text-sm text-gray-700 leading-relaxed"></p>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-sm font-semibold text-deep mb-4">Active Job Offers</h2>
+
+            <div id="active-job-list">
+            </div>
+        </section>
+
+        <div id="edit-modal" class="hidden bg-gray-100 min-h-screen absolute inset-0 bg-black bg-opacity-60">
+            <div class="max-w-4xl mx-auto px-6 py-10">
+
+                <h1 class="text-2xl font-bold mb-6">Edit Profile</h1>
+
+                <form id="edit-form" class="bg-white rounded-xl shadow-sm p-8 space-y-6">
+
+                    <div>
+                        <label class="block text-sm font-medium mb-1">
+                            Company Name
+                        </label>
+                        <input id="edit-name" type="text"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-1">
+                            Company Industry
+                        </label>
+                        <input id="edit-industry" type="text"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-1">
+                            Company Location
+                        </label>
+                        <input id="edit-location" type="text"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-1">
+                            Number of Employees
+                        </label>
+                        <input id="edit-employees-number" type="number"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Description</label>
+                        <input id="edit-description" rows="4" placeholder="Add details about your company..."
+                            class="w-full px-4 py-2 border rounded-lg resize-none">
+                    </div>
+
+                    <hr>
+
+                    <div class="flex justify-end gap-4">
+                        <button id="cancel-edit" type="button" class="px-6 py-2 border rounded-lg hover:bg-gray-100">
+                            Cancel
+                        </button>
+
+                        <button type="submit"
+                            class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2">
+                            <img src="./assets/icons/save.svg" alt="">Save Changes
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="../../js/admin-profile.js"></script>
+</body>
+
+</html>

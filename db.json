@@ -1,0 +1,99 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "role": "company",
+      "name": "Crudzaso Tech",
+      "email": "company@gmail.com",
+      "password": "123456",
+      "industry": "Technology",
+      "location": "Medellín, Colombia",
+      "size": "12",
+      "description": "We build fast hiring experiences"
+    },
+    {
+      "id": "2",
+      "role": "candidate",
+      "name": "Ana Gómez",
+      "email": "candidate@gmail.com",
+      "password": "123456"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "userId": 1,
+      "industry": "Technology",
+      "size": "12",
+      "location": "Medellín, Colombia",
+      "description": "We build fast hiring experiences. Come join us!"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "1",
+      "userId": 2,
+      "title": "Frontend Developer",
+      "skills": [
+        "React",
+        "CSS",
+        "JavaScript"
+      ],
+      "openToWork": true,
+      "location": "Bogotá",
+      "experienceYears": 3
+    }
+  ],
+  "jobOffers": [
+    {
+      "id": "1",
+      "companyId": 1,
+      "title": "Frontend Developer",
+      "description": "React developer with experience in SPAs",
+      "location": "Remote",
+      "employmentType": "Full-time",
+      "status": "open",
+      "createdAt": "2026-02-04"
+    },
+    {
+      "id": "b889",
+      "companyId": 1,
+      "title": "hola",
+      "description": "hola",
+      "location": "hola",
+      "employmentType": "Full-time",
+      "status": "open",
+      "createdAt": "2026-02-04"
+    }
+  ],
+  "matches": [
+    {
+      "id": "1",
+      "companyId": 1,
+      "jobOfferId": 1,
+      "candidateId": 1,
+      "status": "pending",
+      "createdAt": "2026-01-20",
+      "contactUnlocked": false
+    },
+    {
+      "id": "2",
+      "companyId": 1,
+      "jobOfferId": 1,
+      "candidateId": 1,
+      "status": "hired",
+      "createdAt": "2026-01-20",
+      "contactUnlocked": false
+    }
+  ],
+  "reservations": [
+    {
+      "id": "1",
+      "candidateId": 1,
+      "companyId": 1,
+      "jobOfferId": 1,
+      "active": true,
+      "reservedAt": "2026-01-20"
+    }
+  ]
+}
