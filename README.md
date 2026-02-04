@@ -191,6 +191,23 @@ Linked to users by `userId`.
 
 ---
 
+## Git Flow Evidence
+
+Branches used:
+- main
+- develop
+- feat/login-register
+- feat/candidate-profile-dashboard
+- feat/company-job-offers
+
+---
+
+## Group Decisions
+
+- MPA instead of SPA
+- Reservation shown as status
+- Communication via WhatsApp
+
 ## How to Run the Project
 
 ### 1. Install JSON Server
