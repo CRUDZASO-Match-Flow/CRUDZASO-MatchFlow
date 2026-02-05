@@ -1,4 +1,3 @@
-
 # MatchFlow – Hiring Platform (MPA)
 
 MatchFlow is a multi-page recruitment platform that connects companies and candidates through a simple and intuitive hiring flow. Companies can publish job offers, while candidates create professional profiles and apply to open positions.  
@@ -19,7 +18,7 @@ The system follows a **users + role profiles** architecture:
 
 ## Team Members
 
-- Daniela Quinto  
+- Daniela Quinto
 - Ulith  
 - Faiber Camacho  
 - Stteen  
@@ -34,40 +33,6 @@ The system follows a **users + role profiles** architecture:
 - JavaScript (Vanilla)  
 - JSON Server  
 - LocalStorage  
-
----
-
-## Project Structure
-
-```
-matchFlow/
-│
-├── index.html
-├── db.json
-├── css/
-│   └── login.css
-├── js/
-│   ├── auth.js
-│   ├── dashboard.js
-│   ├── guard.js
-│   ├── login.js
-│   ├── profile.js
-│   ├── register.js
-│   └── storage.js
-├── pages/
-│   ├── company/
-│   │   ├── dashboard.html
-│   │   ├── profile.html
-│   │   └── company-job-offers.html
-│   ├── user/
-│   │   ├── candidate-dashboard.html
-│   │   ├── candidate-profile.html
-│   │   └── candidate-job-offers.html
-│   └── Login-register/
-│       └── register.html
-```
-
----
 
 ## Database Structure (`db.json`)
 
@@ -223,4 +188,36 @@ json-server --watch db.json --port 3000
 ### 3. Run Frontend
 Open `index.html` using Live Server or directly in your browser.
 
+---
 
+## Project Structure
+
+```
+matchFlow/
+│
+├── index.html
+├── db.json
+├── css/
+│   └── login.css
+├── js/
+│   ├── auth.js
+│   ├── dashboard.js
+│   ├── guard.js
+│   ├── login.js
+│   ├── profile.js
+│   ├── register.js
+│   └── storage.js
+├── pages/
+│   ├── company/
+│   │   ├── dashboard.html
+│   │   ├── profile.html
+│   │   └── company-job-offers.html
+│   ├── user/
+│   │   ├── candidate-dashboard.html
+│   │   ├── candidate-profile.html
+│   │   └── candidate-job-offers.html
+│   └── Login-register/
+│       └── register.html
+```
+
+---
