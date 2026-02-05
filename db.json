@@ -17,6 +17,41 @@
       "name": "Ana Gómez",
       "email": "candidate@gmail.com",
       "password": "123456"
+    },
+    {
+      "id": "c1d7",
+      "role": "company",
+      "name": "pablo",
+      "email": "pablo@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "780a",
+      "role": "candidate",
+      "name": "marlon",
+      "email": "mar@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "7618",
+      "role": "candidate",
+      "name": "marlon",
+      "email": "12@e",
+      "password": "1234"
+    },
+    {
+      "id": "4df1",
+      "role": "candidate",
+      "name": "marlon",
+      "email": "12@1",
+      "password": "1234"
+    },
+    {
+      "id": "127e",
+      "role": "company",
+      "name": "marlon",
+      "email": "12@12",
+      "password": "1234"
     }
   ],
   "companies": [
@@ -24,9 +59,25 @@
       "id": "1",
       "userId": 1,
       "industry": "Technology",
-      "size": "12",
+      "size": "10",
       "location": "Medellín, Colombia",
       "description": "We build fast hiring experiences. Come join us!"
+    },
+    {
+      "id": "17e0",
+      "userId": "c1d7",
+      "industry": "",
+      "size": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "c148",
+      "userId": "127e",
+      "industry": "",
+      "size": "",
+      "location": "",
+      "description": ""
     }
   ],
   "candidates": [
@@ -42,6 +93,33 @@
       "openToWork": true,
       "location": "Bogotá",
       "experienceYears": 3
+    },
+    {
+      "id": "44ce",
+      "userId": "780a",
+      "title": "",
+      "skills": [],
+      "openToWork": true,
+      "location": "",
+      "experienceYears": 0
+    },
+    {
+      "id": "4d78",
+      "userId": "7618",
+      "title": "",
+      "skills": [],
+      "openToWork": true,
+      "location": "",
+      "experienceYears": 0
+    },
+    {
+      "id": "4cc9",
+      "userId": "4df1",
+      "title": "",
+      "skills": [],
+      "openToWork": true,
+      "location": "",
+      "experienceYears": 0
     }
   ],
   "jobOffers": [
@@ -64,6 +142,16 @@
       "employmentType": "Full-time",
       "status": "open",
       "createdAt": "2026-02-04"
+    },
+    {
+      "id": "7f63",
+      "companyId": 1,
+      "title": "aaa",
+      "description": "aa",
+      "location": "aaa",
+      "employmentType": "Full-time",
+      "status": "open",
+      "createdAt": "2026-02-05"
     }
   ],
   "matches": [

@@ -23,9 +23,13 @@
                 <a href="candidate-dashboard.html">Dashboard</a>
                 <a href="candidate-search.html" class="border-b-2 border-cyan-500 text-slate-900 font-bold">Find jobs</a>
                 <a href="candidate-profile.html">My Profile</a>
+                
             </div>
+
+            
         </div>
-        <button class="border border-gray-300 px-4 py-1.5 rounded text-sm font-semibold">Logout</button>
+         <button id="logout-btn"
+                class="px-4 py-2 text-sm shadow-sm text-deep border font-bold rounded hover:bg-ink hover:text-white transition-colors duration-200">Logout</button>
     </nav>
 
     <div class="header-bg w-full"></div>
@@ -72,8 +76,9 @@
 
 </main>
 
-<script>
+<script>    
 const API_URL = "http://localhost:3000";
+const logoutBtn = document.getElementById("logout-btn")
 
 let allJobs = [];
 let companies = [];
@@ -89,6 +94,12 @@ async function loadData() {
 
     renderJobs(allJobs);
 }
+
+logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("session");
+    window.location.href = "../../index.html";
+});
+
 
 function renderJobs(jobs) {
     const container = document.getElementById("jobs-container");
@@ -141,7 +152,9 @@ document.getElementById("filters-form").addEventListener("submit", event => {
     renderJobs(filtered);
 });
 
+
 loadData();
+
 </script>
 
 </body>
