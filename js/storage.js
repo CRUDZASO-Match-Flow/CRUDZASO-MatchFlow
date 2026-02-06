@@ -101,7 +101,16 @@ export async function updateJobOffer(job_id, params){
     return er
   }
 }
-
+/* Matches */
+export async function getMatchesByCandidateId(userId){
+  try{
+    const response = await request(`/matches?candidateId=${encodeURIComponent(userId)}`);
+    return response || null
+  } catch(er){
+    console.error("Error", er)
+    return er
+  }
+}
 /**
  * Appends a new company into users[0].companies 
  */
