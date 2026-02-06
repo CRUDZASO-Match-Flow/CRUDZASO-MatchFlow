@@ -21,7 +21,7 @@ form.addEventListener("submit", async (e) => {
 
     localStorage.setItem("session", JSON.stringify(user));
 
-    if (user.userType === "company") {
+    if (user.role === "company") {
       window.location.href = "/pages/company/dashboard.html";
     } else {
       window.location.href = "/pages/user/candidate-dashboard.html";
