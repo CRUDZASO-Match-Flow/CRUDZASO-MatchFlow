@@ -199,6 +199,16 @@
       "employmentType": "Full-time",
       "status": "open",
       "createdAt": "2026-02-06"
+    },
+    {
+      "id": "4196",
+      "companyId": "281c",
+      "title": "Backend Developer",
+      "description": "We need an intership to teach and helps us in the morning course for courth 12th",
+      "location": "Barranquilla",
+      "employmentType": "Internship",
+      "status": "open",
+      "createdAt": "2026-02-06"
     }
   ],
   "matches": [

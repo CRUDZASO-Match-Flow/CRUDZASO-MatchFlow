@@ -148,10 +148,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function hookEditButtons() {
   offersList.querySelectorAll(".editBtn").forEach((btn) => {
     btn.addEventListener("click", () => {
-      const id = Number(btn.dataset.id);
+      const id = btn.dataset.id;
 
       const offer = offers.find(
-        (o) => Number(o.id) === id
+        (o) => o.id === id
       );
 
       if (!offer) return;
