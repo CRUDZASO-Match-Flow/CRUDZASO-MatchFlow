@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    ink: '#00171f',
+                    deep: '#003459',
+                    cerulean: '#007ea7',
+                    sky: '#00a8e8'
+                }
+            }
+        }
+    }
+</script>
+
+     <header class="bg-white text-white w-full shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap md:justify-between items-center">
+            <a class="p-2 font-semibold text-xl text-deep text-center min-sm:w-full" href="#">MatchFlow</a>
+            <nav class="flex flex-wrap gap-4 sm:gap-12 text-sm items-center text-deep">
+                <a class="p-2 rounded hover:bg-sky/10 hover:text-sky" href="profile.html">Company Profile</a>
+                <a class="p-2 border-b-2 border-sky rounded hover:bg-sky/10 hover:text-sky font-medium"
+                    href="dashboard.html">Dashboard</a>
+                <a class="p-2 rounded hover:bg-sky/10 hover:text-sky" href="search-candidate.html">Find candidates</a>
+                <a class="p-2 rounded hover:bg-sky/10 hover:text-sky" href="company-job-offers.html">Job Offers</a>
+            </nav>
+            <button id="logout-btn"
+                class="px-4 py-2 text-sm shadow-sm text-deep border font-bold rounded hover:bg-ink hover:text-white transition-colors duration-200">Logout</button>
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+<section class="bg-gradient-to-br from-deep via-cerulean to-sky text-white py-28">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <h1 class="text-5xl font-bold mb-6 leading-tight">
+            Boost Your Career Opportunities
+        </h1>
+        <p class="text-lg opacity-90 max-w-2xl mx-auto mb-10">
+            Get more visibility, priority matching and stand out to top recruiters.
+        </p>
+
+        <a href="#plans"
+            class="bg-white text-deep font-semibold px-10 py-4 rounded-full shadow-xl hover:scale-105 transition">
+            See Plans
+        </a>
+    </div>
+</section>
+
+<!-- PLANS -->
+<section id="plans" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-deep mb-16">
+            Choose Your Career Plan
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-10">
+
+            <!-- FREE -->
+            <div class="bg-white p-10 rounded-3xl shadow-lg border">
+                <h3 class="text-2xl font-bold text-deep mb-4">Free</h3>
+                <p class="text-gray-500 mb-6">Basic profile visibility</p>
+                <p class="text-4xl font-bold text-deep mb-8">$0</p>
+
+                <ul class="space-y-4 text-gray-600 mb-10">
+                    <li>✔ Apply to jobs</li>
+                    <li>✔ Basic profile</li>
+                    <li>✔ Limited search visibility</li>
+                    <li>✔ Standard matching</li>
+                </ul>
+
+                <button disabled
+                    class="w-full bg-gray-300 text-gray-600 py-3 rounded-xl">
+                    Current Plan
+                </button>
+            </div>
+
+            <!-- PLUS -->
+            <div class="bg-white p-10 rounded-3xl shadow-2xl border-4 border-sky relative">
+                <span
+                    class="absolute -top-4 left-1/2 -translate-x-1/2 bg-sky text-white text-xs px-4 py-1 rounded-full">
+                    MOST POPULAR
+                </span>
+
+                <h3 class="text-2xl font-bold text-deep mb-4">Plus</h3>
+                <p class="text-gray-500 mb-6">Increase your visibility</p>
+                <p class="text-4xl font-bold text-deep mb-8">$9<span class="text-lg">/month</span></p>
+
+                <ul class="space-y-4 text-gray-600 mb-10">
+                    <li>✔ Profile highlighted</li>
+                    <li>✔ Appear higher in searches</li>
+                    <li>✔ Advanced job filters</li>
+                    <li>✔ Priority application review</li>
+                </ul>
+
+                <button onclick="openCheckout('Plus',9)"
+                    class="w-full bg-sky text-white py-3 rounded-xl hover:bg-cerulean transition">
+                    Upgrade to Plus
+                </button>
+            </div>
+
+            <!-- PRO -->
+            <div class="bg-white p-10 rounded-3xl shadow-lg border">
+                <h3 class="text-2xl font-bold text-deep mb-4">Pro</h3>
+                <p class="text-gray-500 mb-6">Maximum career acceleration</p>
+                <p class="text-4xl font-bold text-deep mb-8">$19<span class="text-lg">/month</span></p>
+
+                <ul class="space-y-4 text-gray-600 mb-10">
+                    <li>✔ Top search positioning</li>
+                    <li>✔ AI resume optimization</li>
+                    <li>✔ Direct recruiter messages</li>
+                    <li>✔ Career insights dashboard</li>
+                </ul>
+
+                <button onclick="openCheckout('Pro',19)"
+                    class="w-full bg-deep text-white py-3 rounded-xl hover:bg-ink transition">
+                    Upgrade to Pro
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CHECKOUT MODAL -->
+<div id="checkoutModal"
+    class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 overflow-y-auto">
+
+    <div class="bg-white w-full max-w-3xl rounded-3xl shadow-2xl p-10 relative">
+
+        <button onclick="closeCheckout()"
+            class="absolute top-5 right-6 text-gray-400 hover:text-red-500 text-xl">
+            ✕
+        </button>
+
+        <h3 class="text-3xl font-bold text-deep mb-8 text-center">
+            Complete Your Upgrade
+        </h3>
+
+        <form id="checkoutForm" class="space-y-8">
+
+            <!-- PLAN SUMMARY -->
+            <div class="bg-gray-100 p-6 rounded-xl">
+                <p class="text-gray-600">Selected Plan:</p>
+                <p id="selectedPlan" class="text-xl font-bold text-sky"></p>
+                <p id="selectedPrice" class="text-2xl font-bold text-deep"></p>
+            </div>
+
+            <!-- PERSONAL INFO -->
+            <div>
+                <h4 class="font-semibold text-deep mb-4">Personal Information</h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Full Name" required
+                        class="border p-3 rounded-lg w-full">
+                    <input type="email" placeholder="Email Address" required
+                        class="border p-3 rounded-lg w-full">
+                    <input type="text" placeholder="Phone Number"
+                        class="border p-3 rounded-lg w-full">
+                    <input type="text" placeholder="Country"
+                        class="border p-3 rounded-lg w-full">
+                </div>
+            </div>
+
+            <!-- PAYMENT -->
+            <div>
+                <h4 class="font-semibold text-deep mb-4">Payment Details</h4>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Cardholder Name" required
+                        class="border p-3 rounded-lg w-full">
+                    <input type="text" placeholder="Card Number" maxlength="16" required
+                        class="border p-3 rounded-lg w-full">
+                    <input type="text" placeholder="MM/YY" required
+                        class="border p-3 rounded-lg w-full">
+                    <input type="text" placeholder="CVC" maxlength="3" required
+                        class="border p-3 rounded-lg w-full">
+                </div>
+            </div>
+
+            <button type="submit"
+                class="w-full bg-sky text-white py-4 rounded-xl text-lg hover:bg-cerulean transition">
+                Confirm Upgrade
+            </button>
+        </form>
+    </div>
+</div>
+
+<script src="../../js/suscriptions.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
