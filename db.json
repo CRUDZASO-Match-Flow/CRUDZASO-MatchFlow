@@ -147,7 +147,7 @@
   "jobOffers": [
     {
       "id": "1",
-      "companyId": "1",
+      "companyId": 1,
       "title": "Frontend Developer",
       "description": "React developer with experience in SPAs",
       "location": "Remote",
