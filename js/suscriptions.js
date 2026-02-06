@@ -15,6 +15,6 @@
 
     document.getElementById("checkoutForm").addEventListener("submit", function (e) {
         e.preventDefault();
-        alert("🎉 Your plan has been upgraded successfully!");
+        alert(" Your plan has been upgraded successfully!");
         closeCheckout();
     });
