@@ -40,7 +40,8 @@
       "id": "281c",
       "role": "company",
       "email": "riwi@riwi.com",
-      "password": "riwi123"
+      "password": "riwi123",
+      "name": "Riwi"
     },
     {
       "id": "0172",
@@ -67,10 +68,10 @@
     {
       "id": "281c",
       "name": "Riwi",
-      "industry": "",
-      "size": "",
-      "location": "",
-      "description": ""
+      "industry": "Tech",
+      "size": "500",
+      "location": "Guayabal",
+      "description": "We are the leading tech company"
     },
     {
       "id": "0172",
@@ -188,6 +189,16 @@
       "status": "open",
       "createdAt": "2026-02-06",
       "candidates": []
+    },
+    {
+      "id": "8ea0",
+      "companyId": "281c",
+      "title": "Frontend developer",
+      "description": "Necesitamos developers en forntend para la corte 11",
+      "location": "Barranquilla",
+      "employmentType": "Full-time",
+      "status": "open",
+      "createdAt": "2026-02-06"
     }
   ],
   "matches": [
