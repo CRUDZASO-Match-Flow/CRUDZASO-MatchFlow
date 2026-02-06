@@ -1,4 +1,4 @@
-import { registerUser } from "./auth.js";
+import { registerUser, loginUser } from "./auth.js";
 
 const cards = document.querySelectorAll(".role-card");
 const roleInput = document.getElementById("role");
@@ -45,8 +45,18 @@ form.addEventListener("submit", async (e) => {
   }
 
   try {
-    await registerUser(role, name, email, password, confirm);
-    window.location.href = "../../index.html";
+    registerUser(role, name, email, password, confirm).then( //used then to make sure the promise is properly solved before trying to log in
+      async ()=>{ //Make login instead of redirecting to login page
+        const user = await loginUser(email, password);
+        localStorage.setItem("session", JSON.stringify(user));
+        if (user.userType === "company") {
+          window.location.href = "/pages/company/dashboard.html";
+        } else {
+          window.location.href = "/pages/user/candidate-dashboard.html";
+        }
+      }
+    )
+
   } catch (err) {
     errorMsg.textContent = err?.message || "Registration failed. Please try again.";
   }

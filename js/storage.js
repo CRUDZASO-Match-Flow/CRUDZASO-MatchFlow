@@ -71,13 +71,13 @@ export async function getCandidates() {
 
 
 export async function getCompanyByUserId(userId) {
-  const rows = await request(`/companies?userId=${encodeURIComponent(userId)}`);
-  return rows[0] || null;
+  const company = await request(`/companies/${encodeURIComponent(userId)}`);
+  return company || null;
 }
 
 export async function getCandidateByUserId(userId) {
-  const rows = await request(`/candidates?userId=${encodeURIComponent(userId)}`);
-  return rows[0] || null;
+  const candidate = await request(`/candidates/${encodeURIComponent(userId)}`);
+  return candidate || null;
 }
 
 

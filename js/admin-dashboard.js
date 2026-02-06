@@ -1,6 +1,6 @@
 const currentSession = JSON.parse(localStorage.getItem("session"));
 
-const companyId = currentSession.userId
+const companyId = currentSession.id //Changed to use id instead of userId, as they should be the same
 
 if (!currentSession) {
     window.location.href = "../../index.html";

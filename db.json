@@ -3,36 +3,96 @@
     {
       "id": "1",
       "role": "company",
-      "name": "Crudzaso Tech",
       "email": "company@gmail.com",
-      "password": "123456",
-      "industry": "Technology",
-      "location": "Medellín, Colombia",
-      "size": "12",
-      "description": "We build fast hiring experiences"
+      "password": "123456"
     },
     {
       "id": "2",
       "role": "candidate",
-      "name": "Ana Gómez",
       "email": "candidate@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "072c",
+      "role": "candidate",
+      "email": "emailoso@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": "d60a",
+      "role": "candidate",
+      "email": "emailso@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": "4585",
+      "role": "candidate",
+      "email": "jospe@gmail.com",
+      "password": "159753"
+    },
+    {
+      "id": "de07",
+      "role": "candidate",
+      "email": "eduardo@gmail.cmo",
+      "password": "123456"
+    },
+    {
+      "id": "281c",
+      "role": "company",
+      "email": "riwi@riwi.com",
+      "password": "riwi123"
+    },
+    {
+      "id": "0172",
+      "role": "company",
+      "email": "hitman@loco.com",
+      "password": "123456"
+    },
+    {
+      "id": "65e0",
+      "role": "company",
+      "email": "contratos@info.com",
       "password": "123456"
     }
   ],
   "companies": [
     {
       "id": "1",
-      "userId": 1,
+      "name": "Crudzaso Tech",
       "industry": "Technology",
       "size": "12",
       "location": "Medellín, Colombia",
       "description": "We build fast hiring experiences. Come join us!"
+    },
+    {
+      "id": "281c",
+      "name": "Riwi",
+      "industry": "",
+      "size": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "0172",
+      "name": "Hitman",
+      "industry": "",
+      "size": "",
+      "location": "",
+      "description": ""
+    },
+    {
+      "id": "65e0",
+      "name": "ContratosPuros",
+      "industry": "",
+      "size": "",
+      "location": "",
+      "description": ""
     }
   ],
   "candidates": [
     {
-      "id": "1",
-      "userId": 2,
+      "id": "2",
+      "name": "Ana Gómez",
       "title": "Frontend Developer",
       "skills": [
         "React",
@@ -42,48 +102,110 @@
       "openToWork": true,
       "location": "Bogotá",
       "experienceYears": 3
+    },
+    {
+      "id": "072c",
+      "email": "emailoso@gmail.com",
+      "name": "Hernesto",
+      "title": "",
+      "skills": [],
+      "openToWork": true,
+      "location": "",
+      "experienceYears": 0
+    },
+    {
+      "id": "d60a",
+      "email": "emailso@gmail.com",
+      "name": "Hernesto",
+      "title": "",
+      "skills": [],
+      "openToWork": true,
+      "location": "",
+      "experienceYears": 0
+    },
+    {
+      "id": "4585",
+      "email": "jospe@gmail.com",
+      "name": "Jose",
+      "title": "",
+      "skills": [],
+      "openToWork": true,
+      "location": "",
+      "experienceYears": 0
+    },
+    {
+      "id": "de07",
+      "email": "eduardo@gmail.cmo",
+      "name": "Eduardo",
+      "title": "",
+      "skills": [],
+      "openToWork": true,
+      "location": "",
+      "experienceYears": 0
     }
   ],
   "jobOffers": [
     {
       "id": "1",
-      "companyId": 1,
+      "companyId": "1",
       "title": "Frontend Developer",
       "description": "React developer with experience in SPAs",
       "location": "Remote",
       "employmentType": "Full-time",
-      "status": "open",
-      "createdAt": "2026-02-04"
+      "status": "closed",
+      "createdAt": "2026-02-06",
+      "candidates": []
     },
     {
       "id": "b889",
-      "companyId": 1,
+      "companyId": "1",
       "title": "hola",
       "description": "hola",
       "location": "hola",
       "employmentType": "Full-time",
       "status": "open",
-      "createdAt": "2026-02-04"
+      "createdAt": "2026-02-04",
+      "candidates": []
+    },
+    {
+      "id": "7e35",
+      "companyId": 1,
+      "title": "New Job offer",
+      "description": "Come join us! no experience needed",
+      "location": "Remote",
+      "employmentType": "Part-time",
+      "status": "open",
+      "createdAt": "2026-02-06",
+      "candidates": []
+    },
+    {
+      "id": "421a",
+      "companyId": 1,
+      "title": "Frontend developer",
+      "description": "2 years experience needed",
+      "location": "Itagui",
+      "employmentType": "Full-time",
+      "status": "open",
+      "createdAt": "2026-02-06",
+      "candidates": []
     }
   ],
   "matches": [
     {
       "id": "1",
-      "companyId": 1,
-      "jobOfferId": 1,
-      "candidateId": 1,
-      "status": "pending",
-      "createdAt": "2026-01-20",
-      "contactUnlocked": false
+      "companyId": "1",
+      "jobOfferId": "1",
+      "candidateId": "2",
+      "status": "reserved",
+      "createdAt": "2026-01-20"
     },
     {
       "id": "2",
-      "companyId": 1,
-      "jobOfferId": 1,
-      "candidateId": 1,
+      "companyId": "1",
+      "jobOfferId": "1",
+      "candidateId": "1",
       "status": "hired",
-      "createdAt": "2026-01-20",
-      "contactUnlocked": false
+      "createdAt": "2026-01-20"
     }
   ],
   "reservations": [

@@ -25,13 +25,13 @@ export async function registerUser(role, name, email, password, confirm) {
   if (role === "company") {
     const user = await cru.createUser({
       role: "company",
-      name: String(name || "").trim(),
       email: safeEmail,
       password
     });
 
     return await cru.createCompany({
-      userId: user.id,
+      id: user.id,
+      name: String(name || "").trim(),
       industry: "",
       size: "",
       location: "",
@@ -42,13 +42,14 @@ export async function registerUser(role, name, email, password, confirm) {
   if (role === "candidate") {
     const user = await cru.createUser({
       role: "candidate",
-      name: String(name || "").trim(),
       email: safeEmail,
       password
     });
 
     return await cru.createCandidate({
-      userId: user.id,
+      id: user.id,  //changed to use the same id as user
+      email: user.email,
+      name: String(name || "").trim(),
       title: "",
       skills: [],
       openToWork: true,
@@ -68,12 +69,12 @@ export async function loginUser(email, password) {
 
   if (user.role === "company") {
     const profile = await cru.getCompanyByUserId(user.id);
-    return { ...user, ...(profile || {}), userType: "company" };
+    return { ...user, ...(profile || {})}; //Deleted userType, as role already exists
   }
 
   if (user.role === "candidate") {
     const profile = await cru.getCandidateByUserId(user.id);
-    return { ...user, ...(profile || {}), userType: "candidate" };
+    return { ...user, ...(profile || {})}; //deleted userType, as role already exists
   }
 
   throw new Error("Invalid role");
