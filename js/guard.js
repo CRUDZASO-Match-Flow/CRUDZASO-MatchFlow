@@ -6,9 +6,9 @@ export function requireAuth(requiredRole = null) {
         return;
     }
 
-    if (requiredRole && session.userType !== requiredRole) {
+    if (requiredRole && session.role !== requiredRole) {
         
-        if (session.userType === "company") {
+        if (session.role === "company") {
         window.location.href = "...";
         } else {
         window.location.href = "...";
