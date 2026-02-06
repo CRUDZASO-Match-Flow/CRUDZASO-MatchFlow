@@ -80,8 +80,27 @@ export async function getCandidateByUserId(userId) {
   return candidate || null;
 }
 
+/* JobOffers */
+export async function getJobOfferById(job_id){
+  try{
+    const response = await request(`/jobOffers/${encodeURIComponent(job_id)}`)
+    return response || null;
+  } catch(er){
+    console.error("error", er)
+    return er
+  }
 
-
+}
+export async function updateJobOffer(job_id, params){
+  try{
+    const response = await request(`/jobOffers/${encodeURIComponent(job_id)}`, {headers:{"Content-Type":"application/json"}, body:JSON.stringify(params)})
+    return response || null;
+    
+  } catch(er){
+    console.error("Error", er)
+    return er
+  }
+}
 
 /**
  * Appends a new company into users[0].companies 

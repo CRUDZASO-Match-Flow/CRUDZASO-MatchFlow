@@ -79,3 +79,23 @@ export async function loginUser(email, password) {
 
   throw new Error("Invalid role");
 }
+
+export async function addCandidateToOffer(offer_id, candidateId){
+  const offer = await cru.getJobOfferById(offer_id);
+  const candidate = await cru.getCandidateByUserId(candidateId);
+  if(!candidate){
+    console.error("ERROR, Candidate is null")
+    return null
+  }
+  if(!offer){
+    console.error("ERROR, offer is null")
+  }
+  if(Object.hasOwn(offer, "candidates")){
+    offer.candidates.push(candidateId)
+  } else{
+    offer.candidates = [candidateId];
+  }
+  const response = cru.updateJobOffer(offer_id, {candidates : offer.candidates}) //Updates the candidates
+  return response;
+
+}

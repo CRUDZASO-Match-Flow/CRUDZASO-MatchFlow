@@ -13,7 +13,7 @@ if (currentSession.role !== "company") {
   window.location.href = "../user/candidate-dashboard.html";
 }
 
-const companyIdNum = Number(currentSession.id);
+const companyId = currentSession.id;
 
 document.addEventListener("DOMContentLoaded", () => {
   const offersList = document.getElementById("offersList");
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const allOffers = await res.json();
 
       offers = allOffers.filter(
-        (o) => Number(o.companyId) === companyIdNum
+        (o) => o.companyId === companyId
       );
 
       renderOffers();
@@ -148,10 +148,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function hookEditButtons() {
   offersList.querySelectorAll(".editBtn").forEach((btn) => {
     btn.addEventListener("click", () => {
-      const id = Number(btn.dataset.id);
+      const id = btn.dataset.id;
 
       const offer = offers.find(
-        (o) => Number(o.id) === id
+        (o) => o.id === id
       );
 
       if (!offer) return;
@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getOfferPayloadFromForm() {
     return {
-      companyId: companyIdNum,
+      companyId: companyId,
       title: fTitle.value.trim(),
       description: fDescription.value.trim(),
       location: fLocation.value.trim(),
