@@ -24,7 +24,10 @@ The system follows a **users + role profiles** architecture:
 - Faiber Camacho  
 - Stteen  
 - Andres  
-
+- Juliana Sofía
+- Juan Diego Meza
+- Nicolas Garzón
+- Santiago Sánchez
 ---
 
 ## Technologies
@@ -47,24 +50,32 @@ matchFlow/
 ├── css/
 │   └── login.css
 ├── js/
+│   ├── admin-dashboard.js
+│   ├── admin-profile.js
 │   ├── auth.js
-│   ├── dashboard.js
 │   ├── guard.js
+│   ├── job-offers.js
 │   ├── login.js
-│   ├── profile.js
 │   ├── register.js
+│   ├── suscriptions.js
 │   └── storage.js
 ├── pages/
 │   ├── company/
 │   │   ├── dashboard.html
 │   │   ├── profile.html
+│   │   ├── match-detail.html
+│   │   ├── search-candidate.html
 │   │   └── company-job-offers.html
+│   ├── register/
+│   │   ├── register.html
 │   ├── user/
 │   │   ├── candidate-dashboard.html
 │   │   ├── candidate-profile.html
 │   │   └── candidate-job-offers.html
-│   └── Login-register/
-│       └── register.html
+│   ├── .gitignore
+│   ├── db.json
+│   ├── index.html    #login
+│   └── README.md
 ```
 
 ---
@@ -78,7 +89,6 @@ Stores authentication credentials and shared identity.
 {
   "id": 1,
   "role": "company",
-  "name": "Crudzaso Tech",
   "email": "company@gmail.com",
   "password": "123456"
 }
@@ -99,13 +109,13 @@ Linked to users by `userId`.
 ```
 
 ### candidates
-Linked to users by `userId`.
+Linked to users, share the same `id`.
 
 ```json
 {
-  "id": 1,
-  "userId": 2,
+  "id": 2,
   "title": "Frontend Developer",
+  "name": "Crudzaso Tech",
   "skills": ["React", "CSS", "JavaScript"],
   "openToWork": true,
   "location": "Bogotá",
@@ -114,17 +124,18 @@ Linked to users by `userId`.
 ```
 
 ### jobOffers
+They store the candidates id accepted to the jobOffer
 
 ```json
 {
   "id": 1,
-  "companyId": 1,
   "title": "Frontend Developer",
   "description": "React developer with experience in SPAs",
   "location": "Remote",
   "employmentType": "Full-time",
   "status": "open",
-  "createdAt": "2026-01-15"
+  "createdAt": "2026-01-15",
+  "candidates":[]
 }
 ```
 
@@ -142,31 +153,19 @@ Linked to users by `userId`.
 }
 ```
 
-### reservations
-
-```json
-{
-  "id": 1,
-  "candidateId": 1,
-  "companyId": 1,
-  "jobOfferId": 1,
-  "active": true,
-  "reservedAt": "2026-01-20"
-}
-```
-
 ---
 
 ## Data Relationships
 
-- users.id → companies.userId  
-- users.id → candidates.userId  
+- users.id → companies.id   #Te id is always unique
+- users.id → candidates.id  #The id is always unique  
 - companies.id → jobOffers.companyId  
 - jobOffers.id → matches.jobOfferId  
 - candidates.id → matches.candidateId  
 - companies.id → matches.companyId  
 - companies.id → reservations.companyId  
 - candidates.id → reservations.candidateId  
+- matches.candidates -> [...users.id]
 
 ---
 
